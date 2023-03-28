@@ -1,7 +1,4 @@
-# renderer (Structured-Light Simulator)
-
-
-    Structured-Light Simulator
+/*  Structured-Light Simulator
     Copyright (C) 2014-2015 Sk. Mohammadul Haque
 
     This program is free software: you can redistribute it and/or modify
@@ -15,4 +12,21 @@
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.*/
+
+
+#include "../include/rcommon.h"
+#include "../include/main.h"
+
+using namespace std;
+
+int main(int argc, char* argv[])
+{
+    DEBUG_STDOUT("MAIN\n")
+    if(argc<2) renderer_error(RENDERER_ERROR_PARAM);
+    renderer_init_all(argv[1]);
+    renderer_render();
+    renderer_close();
+    return 0;
+}
+

@@ -1,0 +1,16 @@
+paramas file format
+---------------------
+
+<model_fname>
+<ofname>
+<height> <width>
+<outbpp> (0-32bpp, 1-64bpp)
+<K> (3 lines)
+<num_imgs>
+<projRT> (4 lines, 4th for T)
+<sceneRT> (4 lines, 4th for T)
+<patterntype> (0 - no project pattern, 1 - project pattern)
+<if patterntype==1, patfname>
+<diffred> <diffgreen> <diffblue>
+<img_noise_type (0-no noise)> <noise_sigma>
+[<point_size (default - opengl_default)> <disable_lighting (0-default/1)>] (optional jointly)

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="renderer" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/rendererw64" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="./inp.txt" />
+				<Compiler>
+					<Add option="-DDEBUG" />
+					<Add option="-DGLEW_STATIC" />
+				</Compiler>
+				<Linker>
+					<Add option="-fopenmp" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/rendererw64" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="bin/Debug/inp.txt" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-DGLEW_STATIC" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-march=native" />
+			<Add option="-Wnon-virtual-dtor" />
+			<Add option="-Wshadow" />
+			<Add option="-Winit-self" />
+			<Add option="-Wredundant-decls" />
+			<Add option="-Wcast-align" />
+			<Add option="-Wundef" />
+			<Add option="-Wfloat-equal" />
+			<Add option="-Wunreachable-code" />
+			<Add option="-Wmissing-declarations" />
+			<Add option="-Wmissing-include-dirs" />
+			<Add option="-Wswitch-enum" />
+			<Add option="-Wzero-as-null-pointer-constant" />
+			<Add option="-Wmain" />
+			<Add option="-pedantic" />
+			<Add option="-Wextra" />
+			<Add option="-Wall" />
+			<Add option="-std=c++17" />
+			<Add option="`sdl-config --cflags`" />
+			<Add option="-fopenmp" />
+			<Add option="-DSDL_MAIN_HANDLED" />
+		</Compiler>
+		<Linker>
+			<Add option="-lmeshlib -lglew32 -lpng -lz -static" />
+			<Add option="-fopenmp" />
+			<Add option="-s" />
+			<Add library="-lSDL2_ttf.dll -lSDL2main -lSDL2.dll" />
+		</Linker>
+		<Unit filename="include/main.h" />
+		<Unit filename="include/rcommon.h" />
+		<Unit filename="include/rerror.h" />
+		<Unit filename="include/rio.h" />
+		<Unit filename="include/rmath.h" />
+		<Unit filename="include/rrender.h" />
+		<Unit filename="include/tinypng.h" />
+		<Unit filename="resources/resource.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="src/main.cpp" />
+		<Unit filename="src/rerror.cpp" />
+		<Unit filename="src/rio.cpp" />
+		<Unit filename="src/rmath.cpp" />
+		<Unit filename="src/rrender.cpp" />
+		<Unit filename="src/tinypng.cpp" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
